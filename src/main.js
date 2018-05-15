@@ -1,16 +1,22 @@
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 import Vue from 'vue'
-import App from './App.vue'
-
-import HelloWorld from './components/HelloWorld.vue'
-
+import BootstrapVue from 'bootstrap-vue'
 import VueRouter from 'vue-router'
+
+import App from './App.vue'
+import AppMovies from './components/AppMovies.vue'
+ 
 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
+Vue.use(BootstrapVue)
 
 const routes = [
-	{ path: '/', redirect: '/HelloWorld' },
+	{ path: '/', redirect: './movies' },
+	{ path: '/movies', component: AppMovies, name: 'movies' },
 ]
 
 const router = new VueRouter({
